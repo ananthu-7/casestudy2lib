@@ -24,6 +24,7 @@ const addbookroutes = require('./src/routes/addbookroutes')(nav);
 const login = require('./src/routes/login')(nav);
 const signup = require('./src/routes/signup')(nav);
 
+app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
 app.set('view engine','ejs');
 app.set('views','./src/views');

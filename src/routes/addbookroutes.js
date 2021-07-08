@@ -9,17 +9,18 @@ function router(nav){
             title:'Library'
         })
     })
-    addbookroutes.use('/add',function(req,res){
+    addbookroutes.post('/add',function(req,res){
         var item = {
-            title : req.query.title,
-            author : req.query.author,
-            genre : req.query.genre,
-            image : req.query.image
+            title : req.body.title,
+            author : req.body.author,
+            genre : req.body.genre,
+            image : req.body.image
         }
         
         var book = BookData(item);
-        book.save();
+        book.save(); //saving to db
         res.redirect('/books');
+     
         
     })
     return addbookroutes
