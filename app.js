@@ -12,6 +12,9 @@ const nav = [
         link:'/addbook',name:'Addbook'
     },
     {
+        link:'/addauthor',name:'Addauthor'
+    },
+    {
         link:'/logins',name:'Login'
     },
     {
@@ -21,6 +24,7 @@ const nav = [
 const booksrouter = require('./src/routes/booksrouter')(nav);
 const authorrouter = require('./src/routes/authorrouter')(nav);
 const addbookroutes = require('./src/routes/addbookroutes')(nav);
+const addauthorroutes = require('./src/routes/addauthorroutes')(nav);
 const login = require('./src/routes/login')(nav);
 const signup = require('./src/routes/signup')(nav);
 
@@ -33,6 +37,7 @@ app.use('/authors',authorrouter);
 app.use('/logins',login);
 app.use('/signups',signup);
 app.use('/addbook',addbookroutes);
+app.use('/addauthor',addauthorroutes);
 
 app.get('/',function(req,res){
     res.render("logins",

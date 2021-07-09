@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://userone:userone@projectfiles.alo74.mongodb.net/library?retryWrites=true&w=majority');
 
 const Schema = mongoose.Schema;
-const bookSchema = new Schema({
+const authorSchema = new Schema({
     title: String,
-    author: String,
+    name: String,
     genre: String,
-    image: String
+    image: String,
+    des: String
 });
-var BookData = mongoose.model('bookdata',bookSchema);
-module.exports = BookData;
+var AuthorData = mongoose.model('authordata',authorSchema);
+module.exports = AuthorData;

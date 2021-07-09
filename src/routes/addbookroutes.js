@@ -6,7 +6,7 @@ function router(nav){
     addbookroutes.get('/',function(req,res){
         res.render('addbook',{
             nav,
-            title:'Library'
+            title:'Add Book'
         })
     })
     addbookroutes.post('/add',function(req,res){
